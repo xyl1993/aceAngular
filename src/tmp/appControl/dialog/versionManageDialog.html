@@ -1,0 +1,76 @@
+<!-- 新增菜单弹出框 -->
+<meta charset="utf-8">
+<div class="modal fade" id="versionManageDialog" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">新增App</h4>
+            </div>
+            <form id="addMenuForm" class="form-horizontal">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="">App名称</label>
+                                <select class="form-control" ng-model="menuModel.menuGrade" name="menuGrade">
+                                    <option value="">-- 请选择 --</option>
+                                    <option ng-repeat="m in menuGradeList" value="{{m.value}}">{{m.name}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>App版本号</label>
+                                <input class="form-control" ng-model="menuModel.menuUrl" name="menuUrl"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="">App平台</label>
+                                <select class="form-control" ng-model="menuModel.menuGrade" name="menuGrade">
+                                    <option value="">-- 请选择 --</option>
+                                    <option value="1">ios</option>
+                                    <option value="2">android</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="">最新版本</label>
+                                <select class="form-control" ng-model="menuModel.menuGrade" name="menuGrade">
+                                    <option value="">-- 请选择 --</option>
+                                    <option value="1">是</option>
+                                    <option value="2">否</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="">提示更新</label>
+                                <select class="form-control" ng-model="menuModel.menuGrade" name="menuGrade">
+                                    <option value="">-- 请选择 --</option>
+                                    <option value="1">是</option>
+                                    <option value="2">否</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="">强制更新</label>
+                                <select class="form-control" ng-model="menuModel.menuGrade" name="menuGrade">
+                                    <option value="">-- 请选择 --</option>
+                                    <option value="1">是</option>
+                                    <option value="2">否</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>更新说明</label>
+                                <input class="form-control" ng-model="menuModel.menuUrl" name="menuUrl"/>
+                            </div>
+                            <div class="form-group">
+                                <label>App下载地址</label>
+                                <input class="form-control" ng-model="menuModel.menuUrl" name="menuUrl"/>
+                            </div>
+                        </div><!-- /span -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="submit" class="btn btn-primary">确定</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

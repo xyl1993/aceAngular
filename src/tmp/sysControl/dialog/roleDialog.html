@@ -1,0 +1,65 @@
+<!-- 权限设置弹出框 -->
+<meta charset="utf-8">
+<div class="modal fade" id="roleDialg" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">新增角色</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+			<div class="col-sm-12">
+				<div class="tabbable">
+					<ul class="nav nav-tabs" id="myTab">
+						<li class="active">
+							<a data-toggle="tab" data-href="#bot-tab-home" bootstrap-tab-click>
+								角色信息
+							</a>
+						</li>
+
+						<li class="">
+							<a data-toggle="tab" data-href="#bot-tab-profile" bootstrap-tab-click>
+								角色权限
+							</a>
+						</li>
+					</ul>
+
+					<div class="tab-content">
+						<div id="bot-tab-home" class="tab-pane active">
+							<div>
+								<label>所属系统</label>
+								<select class="form-control" id="form-field-select-1">
+									<option value="">&nbsp;</option>
+								</select>
+							</div>
+							<div>
+								<label>角色名称</label>
+								<input class="form-control" />
+							</div>
+							<div class="role-dyn">
+								<label>角色状态</label>
+								<input id="gritter-light" checked="" type="checkbox" class="ace ace-switch ace-switch-5">
+								<span class="lbl"></span>
+							</div>
+							<div>
+								<label for="form-field-8">角色描述</label>
+								<textarea class="form-control" id="form-field-8" placeholder="Default Text"></textarea>
+							</div>
+						</div>
+
+						<div id="bot-tab-profile" class="tab-pane">
+    						<div id="permitTree" class="tree tree-selectable"></div>
+						</div>
+					</div>
+				</div>
+			</div><!-- /span -->
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" ng-click="save()">确定</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

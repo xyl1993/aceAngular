@@ -1,0 +1,134 @@
+@CHARSET "UTF-8";
+.navbar{
+    background: #157fcb;
+}
+.nav-tabs>li {
+    cursor: pointer;
+}
+.nav-tabs.background-blue{
+    background-color: #ADD2ED;
+}
+.breadcrumbs{
+    background-color: #ADD2ED;
+}
+#menu .icon-remove{
+    cursor: pointer;
+}
+.search-row span {
+	font-size: 14px;
+	line-height: 34px;
+	position: absolute;
+}
+.search-row .input-dyn {
+    padding-left: 76px;
+}
+.search-row .input-dyn input, .search-row .input-dyn select {
+    width: 100%;
+    height: 34px;
+}
+
+.search-row .btn {
+    border: 1px solid #fff;
+    padding: 6px 12px;
+}
+.tab-content .role-dyn{
+    padding: 6px 0;
+}    
+.tab-content .role-dyn label{
+    margin-bottom: 0;
+}
+
+.tree{
+    padding-left:0;
+}
+
+.tree:before{
+    border:0;
+}
+.search-nofirst-row{
+    padding-top: 12px;
+}
+.right-search-btn{
+    text-align: right;
+}
+.form-horizontal .form-group{
+    margin-left: 0;
+    margin-right: 0;
+}
+.form-group.has-error input, .form-group.has-error select, .form-group.has-error textarea{
+    box-shadow: none!important;
+    color: #858585;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+}
+.help-block{
+    margin-bottom: 0;
+}
+.user-menu li{
+	cursor:pointer;
+}
+.search-row .input-group-addon{
+    top: 0;
+    right: 0px;
+    line-height: 20px;
+    text-align: center;
+    width: 34px;
+}
+input[type=checkbox].ace.ace-switch.refuse-flag.ace-switch-7+.lbl::before{
+    content: '拒绝\a0\a0\a0\a0\a0\a0\a0\a0\a0                 通过';
+}
+.top-tag-ul{
+    position: absolute;
+    background-color: #eff3f8;
+    height: 62px;
+    top: 25px;
+    z-index: 999;
+    margin-left: 0px;
+    list-style: none;
+    left: 21px;
+    width: 119px;
+}
+.menu-item-separator{
+    height: 1px;
+    border-top: solid 1px #e1e1e1;
+    background-color: white;
+    margin: 2px 0;
+    padding: 0;
+}
+.top-tag-ul li{
+    height: 26px;
+    line-height:26px;
+    padding-left: 27px;
+    position: relative;
+    cursor: pointer;
+}
+.top-tag-ul li span{
+    font-size: 12px;
+    color: black;
+    cursor: pointer;
+    margin-right: 16px;
+}
+.menu-item-icon{
+    width: 16px;
+    height: 16px;
+    top: 5px;
+    left: 3px;
+    background-position: center center;
+    position:absolute;
+}
+.menu-icon-separator {
+    left: 22px;
+    border-left: solid 1px #e1e1e1;
+    background-color: white;
+    width: 1px;
+}
+.menu-icon-separator {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    height: 100%;
+    overflow: hidden;
+}
+.menu-disabled{
+    opacity: .5;
+}

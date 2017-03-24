@@ -1,0 +1,126 @@
+<!-- 版本管理 -->
+<meta charset="utf-8">
+<div class="row" ng-controller="versionManageCtrl">
+    <div class="col-sm-12">
+        <div class="widget-box">
+            <div class="widget-header widget-header-small">
+                <h5 class="lighter">APP查询</h5>
+            </div>
+            <div class="widget-body">
+                <div class="widget-main">
+                    <form class="form-search">
+                        <div class="row search-row">
+                            <div class="col-sm-3">
+                                <span>APP名称:</span>
+                                <div class="input-dyn">
+                                    <input type="text" ng-model="searchData.content" class="ng-pristine ng-valid">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>APP版本号:</span>
+                                <div class="input-dyn">
+                                    <input type="text" ng-model="searchData.content" class="ng-pristine ng-valid">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>APP平台:</span>
+                                <div class="input-dyn">
+                                    <input type="text" ng-model="searchData.content" class="ng-pristine ng-valid">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 right-search-btn">
+                                <button class="btn btn-info">搜索</button>
+                                <button class="btn btn-purple">重置</button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="space-6"></div>
+    <div class="col-sm-12">
+        <div class="widget-box">
+            <div class="widget-header widget-header-small">
+                <h5 class="lighter">APP版本列表</h5>
+            </div>
+            <div class="widget-body">
+                <div class="widget-main">
+                    <p>
+                        <button class="btn btn-sm btn-primary" ng-click="add()">新增</button>
+                    </p>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="table-responsive">
+                                <table id="sample-table-1" class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th class="center">
+                                            <label>
+                                                <input type="checkbox" id="versionManageSelectAll" ng-click="selectAll($event)" class="ace">
+                                                <span class="lbl"></span>
+                                            </label>
+                                        </th>
+                                        <th>APP名称</th>
+                                        <th>APP版本</th>
+                                        <th>APP平台</th>
+                                        <th>APP下载地址</th>
+                                        <th>最新版本</th>
+                                        <th>提示更新</th>
+                                        <th>强制更新</th>
+                                        <th>更新说明</th>
+                                        <th>创建时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    <tr ng-repeat="list in lists">
+                                        <td class="center">
+                                            <label>
+                                                <input type="checkbox" data-sId="list.sId" ng-click="select($event)" class="ace versionManageCheckd">
+                                                <span class="lbl"></span>
+                                            </label>
+                                        </td>
+
+                                        <td ng-bind="list.sAccount">
+                                        </td>
+                                        <td ng-bind="list.sAccount">
+                                        </td>
+                                        <td ng-bind="list.sAccount">
+                                        </td>
+                                        <td ng-bind="list.sAccount">
+                                        </td>
+                                        <td ng-bind="list.sAccount">
+                                        </td>
+                                        <td ng-bind="list.sAccount">
+                                        </td>
+                                        <td ng-bind="list.sAccount">
+                                        </td>
+                                        <td ng-bind="list.sAccount">
+                                        </td>
+                                        <td ng-bind="list.sAccount">
+                                        </td>
+                                        <td>
+                                            <div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
+                                                <button class="btn btn-xs btn-info" title="编辑" ng-click="edit(list)">
+                                                    <i class="icon-edit bigger-120"></i>
+                                                </button>
+                                                <button class="btn btn-xs btn-danger" ng-click="del()" title="删除">
+                                                    <i class="icon-trash bigger-120"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div><!-- /.table-responsive -->
+                        </div><!-- /span -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <version-manage-dialog></version-manage-dialog>
+</div>

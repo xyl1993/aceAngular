@@ -1,0 +1,57 @@
+<!-- 新增系统用户弹出框 -->
+<meta charset="utf-8">
+<div class="modal fade" id="sysUserDialog" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">新增角色</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label>用户角色</label>
+					<select class="form-control" id="form-field-select-1">
+						<option value="">&nbsp;</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>帐号</label>
+					<input class="form-control" ng-model="userModel.sAccount" name="sAccount"/>
+				</div>
+				<div class="form-group">
+					<label>密码</label>
+					<input name="loginPassword" ng-model="userModel.loginPassword" class="form-control">
+					<span class="lbl"></span>
+				</div>
+                <div class="form-group">
+                    <label>确认密码</label>
+                    <input name="reloginPassword" class="form-control">
+                    <span class="lbl"></span>
+                </div>
+                <div class="form-group">
+                    <label>用户名</label>
+                    <input name="mUserName" ng-model="userModel.mUserName" class="form-control">
+                    <span class="lbl"></span>
+                </div>
+                <div class="form-group">
+                    <label>手机号</label>
+                    <input name="mobilePhone" ng-model="userModel.mobilePhone" class="form-control">
+                    <span class="lbl"></span>
+                </div>
+                <div class="role-dyn">
+                    <label>邮箱</label>
+                    <input name="eMail" ng-model="userModel.eMail" class="form-control">
+                    <span class="lbl"></span>
+                </div>
+			</div><!-- /span -->
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" ng-click="saveUser()">确定</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

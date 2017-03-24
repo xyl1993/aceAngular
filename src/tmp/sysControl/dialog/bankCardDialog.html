@@ -1,0 +1,82 @@
+<!-- 银行卡审核弹出框 -->
+<meta charset="utf-8">
+<div class="modal fade" id="bankCardDialog" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+						aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">审核</h4>
+			</div>
+			<form class="form-horizontal">
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label class="">帐号</label>
+								<input class="form-control" readonly ng-model="dialogModel.cUserName" name="menuName"/>
+							</div>
+							<div class="form-group">
+								<label>用户名</label>
+								<input class="form-control" readonly ng-model="dialogModel.cUserName" name="menuName"/>
+							</div>
+							<div class="form-group" ng-if="cUserName.menuGrade == 2">
+								<label>身份证号</label>
+								<input class="form-control" readonly ng-model="cUserName.idNumber" name="menuName"/>
+							</div>
+							<div class="form-group" ng-if="cUserName.menuGrade == 2">
+								<label>银行名称</label>
+								<input class="form-control" readonly ng-model="cUserName.bankName" name="menuName"/>
+							</div>
+							<div class="form-group">
+								<label>银行卡号</label>
+								<input class="form-control" readonly ng-model="cUserName.cardNumber" name="menuName"/>
+							</div>
+							<div class="form-group">
+								<label>银行卡图片</label>
+								<ul class="ace-thumbnails">
+                                    <li>
+                                        <a href="assets/images/gallery/image-1.jpg" title="Photo Title" data-rel="colorbox" class="cboxElement">
+                                            <img alt="150x150" src="assets/images/gallery/thumb-1.jpg">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="assets/images/gallery/image-2.jpg" title="Photo Title" data-rel="colorbox" class="cboxElement">
+                                            <img alt="150x150" src="assets/images/gallery/thumb-2.jpg">
+                                        </a>
+                                    </li>
+                                </ul>
+							</div>
+                            <div class="form-group">
+                                <label>银行卡正面审核状态</label>
+                                <label ng-if="lookType==2">
+                                    <input name="switch-field-1" class="ace ace-switch ace-switch-7 refuse-flag" type="checkbox">
+                                    <span class="lbl"></span>
+                                </label>
+                                <input ng-if="lookType==1" class="form-control" readonly ng-model="cUserName.frontState" name="frontState"/>
+                            </div>
+                            <div class="form-group">
+                                <label>银行卡反面审核状态</label>
+                                <label ng-if="lookType==2">
+                                    <input name="switch-field-1" class="ace ace-switch ace-switch-7 refuse-flag" type="checkbox">
+                                    <span class="lbl"></span>
+                                </label>
+                                <input ng-if="lookType==1" class="form-control" readonly ng-model="cUserName.reverseState" name="reverseState"/>
+                            </div>
+                            <div class="form-group">
+                                <label>审核意见</label>
+                                <input class="form-control" id="dialogCheckReason" ng-model="cUserName.checkReason" name="checkReason"/>
+                            </div>
+						</div><!-- /span -->
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal" ng-if="lookType==1">关闭</button>
+					<button type="button" class="btn btn-primary" ng-if="lookType==1">驳回审核</button>
+                    <button type="button" class="btn btn-default" ng-if="lookType==2">通过</button>
+                    <button type="button" class="btn btn-primary" ng-if="lookType==2">拒绝</button>
+				</div>
+			</form>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

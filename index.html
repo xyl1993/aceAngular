@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>后台管理系统</title>
+    <!-- basic styles -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <!-- page specific plugin styles -->
+    <link rel="stylesheet" href="assets/css/colorbox.css"/>
+    <link rel="stylesheet" href="assets/css/datepicker.css"/>
+    <!-- fonts -->
+    <!-- <link rel="stylesheet" href="assets\css\cyrillic.css" /> -->
+    <!-- ace styles -->
+    <link rel="stylesheet" href="assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="assets/css/ace-skins.min.css"/>
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="assets/css/ace-ie.min.css"/>
+    <![endif]-->
+    <!-- inline styles related to this page -->
+    <!-- ace settings handler -->
+    <script src="assets/js/ace-extra.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css"/>
+    <link rel="stylesheet" type="text/css" href="src/css/style.css">
+</head>
+<body class="navbar-fixed breadcrumbs-fixed">
+<div ng-controller="indexCtrl">
+    <div class="navbar navbar-default navbar-fixed-top" id="navbar">
+        <div class="navbar-container" id="navbar-container">
+            <div class="navbar-header pull-left">
+                <a href="#" class="navbar-brand">
+                    <small>
+                        <i class="icon-leaf"></i>
+                        后台管理系统
+                    </small>
+                </a>
+                <!-- /.brand -->
+            </div>
+            <!-- /.navbar-header -->
+            <div class="navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav">
+                    <li class="light-blue">
+                        <a data-toggle="dropdown" class="dropdown-toggle">
+                            <img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo"/>
+                                <span class="user-info">
+									<small>欢迎光临,</small>
+									Jason
+								</span>
+                            <i class="icon-caret-down"></i>
+                        </a>
+                        <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a>
+                                    <i class="icon-user"></i> 个人资料
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li ng-click="loginOut()">
+                                <a>
+                                    <i class="icon-off"></i> 退出
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- /.ace-nav -->
+            </div>
+            <!-- /.navbar-header -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <div class="main-container fixed" id="main-container">
+        <div class="main-container-inner">
+            <a class="menu-toggler" id="menu-toggler" href="#">
+                <span class="menu-text"></span>
+            </a>
+            <div class="sidebar sidebar-fixed" id="sidebar">
+                <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                    <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                        <span>菜单</span>
+                    </div>
+                </div>
+                <ul class="nav nav-list">
+                    <li ng-repeat="menuData in menuDatas" class="$index==0?'active open':''">
+                        <a class="dropdown-toggle">
+                            <i class="icon-list"></i>
+                            <span class="menu-text" ng-bind="menuData.menu_name">  </span>
+
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+
+                        <ul class="submenu">
+                            <li data-type="{{list.data_type}}" data-name="{{list.menu_name}}"
+                                ng-repeat="list in menuData.children" data-url="{{list.menu_url}}" class="left-tab-menu" left-menu>
+                                <a>
+                                    <i class="icon-double-angle-right"></i>
+                                    <span ng-bind="list.menu_name"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- /.nav-list -->
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="icon-double-angle-left" data-icon1="icon-double-angle-left"
+                       data-icon2="icon-double-angle-right"></i>
+                </div>
+            </div>
+            <div class="main-content" ui-view>
+
+            </div>
+            <!-- /.main-content -->
+        </div>
+        <!-- /.main-container-inner -->
+        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+            <i class="icon-double-angle-up icon-only bigger-110"></i>
+        </a>
+    </div>
+    <!-- /.main-container -->
+</div>
+</body>
+<script src="assets/js/jquery-2.0.3.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/typeahead-bs2.min.js"></script>
+<!-- page specific plugin scripts -->
+<!--[if lte IE 8]>
+<script src="assets/js/excanvas.min.js"></script>
+<![endif]-->
+<!-- 	<script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script> -->
+<!-- <script src="assets/js/jquery.ui.touch-punch.min.js"></script> -->
+<script src="assets/js/bootbox.min.js"></script>
+<script src="assets/js/jquery.slimscroll.min.js"></script>
+<script src="assets/js/jquery.easy-pie-chart.min.js"></script>
+<script src="assets/js/jquery.sparkline.min.js"></script>
+<script src="assets/js/flot/jquery.flot.min.js"></script>
+<script src="assets/js/flot/jquery.flot.pie.min.js"></script>
+<script src="assets/js/flot/jquery.flot.resize.min.js"></script>
+<script src="assets/js/jquery.validate.min.js"></script>
+<script src="bower_components/jquery/jquery.twbsPagination.js"></script>
+<script src="bower_components/bootstrap/js/bootstrap-datepicker-cn.min.js"></script>
+<!-- inline scripts related to this page -->
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular/angular-sanitize.min.js"></script>
+<script src="bower_components/angular/angular-resource.min.js"></script>
+<script src="bower_components/angular/angular-ui-router.js"></script>
+
+<!-- ace scripts -->
+<script src="assets/js/jquery.colorbox-min.js"></script>
+<script src="assets/js/ace-elements.min.js"></script>
+<script src="assets/js/ace.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+<script src="src/js/index.js"></script>
+
+<script src="src/js/service/indexServ.js"></script>
+<script src="src/js/service/sysServ.js"></script>
+<script src="src/js/service/appServ.js"></script>
+
+<script src="src/js/directive/index.js"></script>
+<script src="src/js/directive/sysControlDirective.js"></script>
+<script src="src/js/directive/appControlDirective.js"></script>
+
+<script src="src/js/ctrl/indexController.js"></script>
+<script src="src/js/ctrl/sysCtrl/authorizationGroupCtrl.js"></script>
+<script src="src/js/ctrl/sysCtrl/sysUserCtrl.js"></script>
+<script src="src/js/ctrl/sysCtrl/menuMainCtrl.js"></script>
+<script src="src/js/ctrl/sysCtrl/bankCardAudit.js"></script>
+<script src="src/js/ctrl/appCtrl/versionManageCtrl.js"></script>
+<script src="src/js/ctrl/appCtrl/announceManageCtrl.js"></script>
+</html>

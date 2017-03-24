@@ -1,0 +1,52 @@
+<!-- 新增菜单弹出框 -->
+<meta charset="utf-8">
+<div class="modal fade" id="addMenuDialog" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">新增菜单</h4>
+            </div>
+            <form id="addMenuForm" class="form-horizontal">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="">菜单名称</label>
+                                <input class="form-control" ng-model="menuModel.menuName" name="menuName"/>
+                            </div>
+                            <div class="form-group">
+                                <label>菜单等级</label>
+                                <select class="form-control" ng-model="menuModel.menuGrade" name="menuGrade">
+                                    <option value="">-- 请选择 --</option>
+                                    <option ng-repeat="m in menuGradeList" value="{{m.value}}">{{m.name}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group" ng-if="menuModel.menuGrade == 2">
+                                <label>上级菜单</label>
+                                <select class="form-control" ng-model="menuModel.menuFather" name="menuFather">
+                                    <option value="">-- 请选择 --</option>
+                                    <option ng-repeat="m in menuGradeList" value="{{m.value}}">{{m.name}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group" ng-if="menuModel.menuGrade == 2">
+                                <label>菜单路径</label>
+                                <input class="form-control" ng-model="menuModel.menuUrl" name="menuUrl"/>
+                            </div>
+                            <div class="form-group">
+                                <label>菜单说明</label>
+                                <textarea class="form-control" name="loginPassword" ng-model="menuModel.remark"></textarea>
+                                <span class="lbl"></span>
+                            </div>
+                        </div><!-- /span -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="submit" class="btn btn-primary">确定</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

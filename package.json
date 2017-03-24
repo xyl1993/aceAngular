@@ -1,0 +1,15 @@
+{
+  "name": "static-work",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-clean": "1.0.0",
+    "grunt-contrib-concat": "~0.1.1",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-jshint": "^0.1.1",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-css": ">0.0.0",
+    "grunt-csscomb": "^3.1.1"
+  }
+}

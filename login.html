@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>浪莎登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- CSS -->
+    <link rel="stylesheet" href="login/css/reset.css" />
+    <link rel="stylesheet" href="login/css/supersized.css" />
+    <link rel="stylesheet" href="login/css/style.css" />
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="page-container">
+    <h1>浪莎支付</h1>
+    <form>
+        <input type="text" name="username" class="username" placeholder="用户名" />
+        <input type="password" name="password" class="password"
+               placeholder="密码" maxlength="16"/>
+        <a class="err-text"></a>
+        <button type="submit" onclick="login()">登录</button>
+    </form>
+</div>
+<!-- Javascript -->
+<script src="login/js/jquery-1.8.2.min.js"></script>
+<script src="login/js/supersized.3.2.7.min.js"></script>
+<script src="login/js/supersized-init.js"></script>
+<script src="login/js/scripts.js"></script>
+<script>
+    function login() {
+        var data = {
+            "username":$('.username').val(),
+            "password":$('.password').val()
+        }
+        $.ajax({
+            method:'post',
+            url:'',
+            data:data,
+            dataType: "json",
+            contentType: "application/json" //*****和application-servlet.xml配置相同
+        }).success(function (res) {
+            console.log(res);
+        })
+    }
+</script>
+</body>
+</html>

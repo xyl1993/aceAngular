@@ -1,0 +1,22 @@
+{
+    "code":200,
+    "data":[{
+      "sId":1,
+      "sAccount":"234",
+      "loginPassword":"12345",
+      "mUserName":"sd",
+      "mobilePhone":"1929292929",
+      "eMail":"60216507@qq.com",
+      "mId":1,
+      "useState":0
+    },{
+      "sId":2,
+      "sAccount":"234",
+      "loginPassword":"12345",
+      "mUserName":"sd",
+      "mobilePhone":"1929292929",
+      "eMail":"60216507@qq.com",
+      "mId":1,
+      "useState":0
+    }]
+}

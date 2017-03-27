@@ -4,12 +4,14 @@ mainModule.factory('appServ', ['$http',
             getVersionDatas: function() {
                 return $http({
                     method: 'get',
+                    ignoreLoadingBar: true,
                     url: 'src/data/role.json'
                 })
             },
             getAnnounceDatas: function() {
                 return $http({
                     method: 'get',
+                    ignoreLoadingBar: true,
                     url: 'src/data/role.json'
                 })
             }

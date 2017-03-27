@@ -36,7 +36,8 @@ module.exports = function(grunt) {
                     'assets/css/ace.min.css',
                     'assets/css/ace-rtl.min.css',
                     'assets/css/ace-skins.min.css',
-                    'bower_components/jstree/jstree.min.css'
+                    'bower_components/jstree/jstree.min.css',
+                    'bower_components/loading-bar/loading-bar.min.css'
                 ],
                 dest: 'dist/assets/css/vendor.css'
             }
@@ -70,13 +71,15 @@ module.exports = function(grunt) {
                         'bower_components/jquery/jquery.twbsPagination.js',
                         'bower_components/bootstrap/js/bootstrap-datepicker-cn.min.js',
                         'bower_components/angular/angular.min.js',
+                        'bower_components/angular/angular-animate.min.js',
                         'bower_components/angular/angular-sanitize.min.js',
                         'bower_components/angular/angular-resource.min.js',
                         'bower_components/angular/angular-ui-router.js',
                         'assets/js/jquery.colorbox-min.js',
                         'assets/js/ace-elements.min.js',
                         'assets/js/ace.min.js',
-                        'bower_components/jstree/jstree.min.js'
+                        'bower_components/jstree/jstree.min.js',
+                        'bower_components/loading-bar/loading-bar.min.js'
                     ],
                 }
             }

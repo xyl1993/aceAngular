@@ -1,6 +1,6 @@
 //模块化
 var mainModule = angular.module('mainModule', ['ui.router',
-				'ngResource', 'ngSanitize']);
+				'ngResource', 'ngSanitize','angular-loading-bar','ngAnimate']);
 
 //全局配置
 mainModule.run(['$rootScope','$state','$http','$stateParams','$location','$timeout','$window',
@@ -15,5 +15,9 @@ mainModule.config(['$stateProvider','$urlRouterProvider','$compileProvider',
 	});
 	$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|tel|file|sms):/);
 	$urlRouterProvider.otherwise('/index');   //默认home
+}]).config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+    cfpLoadingBarProvider.includeSpinner = true;
+    cfpLoadingBarProvider.parentSelector = '#loading-bar-container';
+    cfpLoadingBarProvider.spinnerTemplate = '<div>Loading...</div>';
 }]);
 

@@ -128,12 +128,12 @@ mainModule.directive("equelframe",[function(){
                     type = $(this).data('type'),
                     url = $(this).data('url'),
                     topListAry = $('.top-menu-list');
-        	    $('.top-menu-list').removeClass('active');
-    	    	$('.child-content').hide();
         	    if($('[data-category='+type+']').length!=0){
+					$('.top-menu-list').removeClass('active');
+					$('.child-content').hide();
         	    	$('li[data-category='+type+']').addClass('active');
     	        	$('div[data-category='+type+']').show();
-        	    }else{
+        	    }else{ 
 					for(var i=0,len = topListAry.length;i<len;i++){
 						sumWidth = sumWidth+$(topListAry[i]).width();
 					}
@@ -141,6 +141,8 @@ mainModule.directive("equelframe",[function(){
 						bootbox.alert("不能在添加啦");
 						return;
 					}
+					$('.top-menu-list').removeClass('active');
+					$('.child-content').hide();
         	        var _temp = '<li class="active top-menu-list not-main-tab" data-category = "'+type+'" top-menu >'+
 				                  '<a data-toggle="tab">'+menuName+'<span class="icon-remove" data-category = "'+type+'" close-top-tab></span>'+'</a>'+
 				                 '</li>';

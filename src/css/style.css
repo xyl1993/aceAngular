@@ -132,3 +132,6 @@ input[type=checkbox].ace.ace-switch.refuse-flag.ace-switch-7+.lbl::before{
 .menu-disabled{
     opacity: .5;
 }
+#loading-bar .bar {
+    position: relative;
+}

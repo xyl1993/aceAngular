@@ -4,6 +4,7 @@ mainModule.factory('indexServ', ['$http',
             loadMenu: function() {
                 return $http({
                     method: 'get',
+                    ignoreLoadingBar: true,
                     url: 'src/data/menu.json'
                 })
             }

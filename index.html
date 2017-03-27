@@ -32,10 +32,12 @@
     <script src="assets/js/html5shiv.js"></script>
     <script src="assets/js/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css"/>
+    <link rel="stylesheet" href="bower_components/jstree/jstree.min.css"/>
+    <link rel='stylesheet' href='bower_components/loading-bar/loading-bar.min.css' type='text/css' media='all' />
     <link rel="stylesheet" type="text/css" href="src/css/style.css">
 </head>
 <body class="navbar-fixed breadcrumbs-fixed">
+<div id="loading-bar-container"></div>
 <div ng-controller="indexCtrl">
     <div class="navbar navbar-default navbar-fixed-top" id="navbar">
         <div class="navbar-container" id="navbar-container">
@@ -152,6 +154,7 @@
 <script src="bower_components/bootstrap/js/bootstrap-datepicker-cn.min.js"></script>
 <!-- inline scripts related to this page -->
 <script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular/angular-animate.min.js"></script>
 <script src="bower_components/angular/angular-sanitize.min.js"></script>
 <script src="bower_components/angular/angular-resource.min.js"></script>
 <script src="bower_components/angular/angular-ui-router.js"></script>
@@ -161,7 +164,8 @@
 <script src="assets/js/ace-elements.min.js"></script>
 <script src="assets/js/ace.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+<script src="bower_components/jstree/jstree.min.js"></script>
+<script src='bower_components/loading-bar/loading-bar.min.js'></script>
 <script src="src/js/index.js"></script>
 
 <script src="src/js/service/indexServ.js"></script>

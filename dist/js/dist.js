@@ -1,6 +1,6 @@
 //模块化
 var mainModule = angular.module('mainModule', ['ui.router',
-				'ngResource', 'ngSanitize']);
+				'ngResource', 'ngSanitize','angular-loading-bar','ngAnimate']);
 
 //全局配置
 mainModule.run(['$rootScope','$state','$http','$stateParams','$location','$timeout','$window',
@@ -15,6 +15,10 @@ mainModule.config(['$stateProvider','$urlRouterProvider','$compileProvider',
 	});
 	$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|tel|file|sms):/);
 	$urlRouterProvider.otherwise('/index');   //默认home
+}]).config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+    cfpLoadingBarProvider.includeSpinner = true;
+    cfpLoadingBarProvider.parentSelector = '#loading-bar-container';
+    cfpLoadingBarProvider.spinnerTemplate = '<div>Loading...</div>';
 }]);
 
 
@@ -172,12 +176,12 @@ mainModule.directive("equelframe",[function(){
                     type = $(this).data('type'),
                     url = $(this).data('url'),
                     topListAry = $('.top-menu-list');
-        	    $('.top-menu-list').removeClass('active');
-    	    	$('.child-content').hide();
         	    if($('[data-category='+type+']').length!=0){
+					$('.top-menu-list').removeClass('active');
+					$('.child-content').hide();
         	    	$('li[data-category='+type+']').addClass('active');
     	        	$('div[data-category='+type+']').show();
-        	    }else{
+        	    }else{ 
 					for(var i=0,len = topListAry.length;i<len;i++){
 						sumWidth = sumWidth+$(topListAry[i]).width();
 					}
@@ -185,6 +189,8 @@ mainModule.directive("equelframe",[function(){
 						bootbox.alert("不能在添加啦");
 						return;
 					}
+					$('.top-menu-list').removeClass('active');
+					$('.child-content').hide();
         	        var _temp = '<li class="active top-menu-list not-main-tab" data-category = "'+type+'" top-menu >'+
 				                  '<a data-toggle="tab">'+menuName+'<span class="icon-remove" data-category = "'+type+'" close-top-tab></span>'+'</a>'+
 				                 '</li>';
@@ -251,12 +257,14 @@ mainModule.factory('appServ', ['$http',
             getVersionDatas: function() {
                 return $http({
                     method: 'get',
+                    ignoreLoadingBar: true,
                     url: 'src/data/role.json'
                 })
             },
             getAnnounceDatas: function() {
                 return $http({
                     method: 'get',
+                    ignoreLoadingBar: true,
                     url: 'src/data/role.json'
                 })
             }
@@ -271,6 +279,7 @@ mainModule.factory('indexServ', ['$http',
             loadMenu: function() {
                 return $http({
                     method: 'get',
+                    ignoreLoadingBar: true,
                     url: 'src/data/menu.json'
                 })
             }
@@ -285,18 +294,21 @@ mainModule.factory('sysServ', ['$http',
             getRole: function() {
                 return $http({
                     method: 'get',
+                    ignoreLoadingBar: true,
                     url: 'src/data/role.json'
                 })
             },
             getSysUser: function() {
                 return $http({
                     method: 'get',
+                    ignoreLoadingBar: true,
                     url: 'src/data/sysUser.json'
                 })
             },
             getBankCard: function() {
                 return $http({
                     method: 'get',
+                    ignoreLoadingBar: true,
                     url: 'src/data/bankCardAudit.json'
                 })
             }

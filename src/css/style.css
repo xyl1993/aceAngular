@@ -135,3 +135,11 @@ input[type=checkbox].ace.ace-switch.refuse-flag.ace-switch-7+.lbl::before{
 #loading-bar .bar {
     position: relative;
 }
+
+.modal{
+     overflow-y: hidden;
+}
+.modal-body{
+    overflow-y:auto;
+    max-height: 466px;
+}

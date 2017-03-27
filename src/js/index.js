@@ -1,6 +1,6 @@
 //模块化
 var mainModule = angular.module('mainModule', ['ui.router',
-				'ngResource', 'ngSanitize','angular-loading-bar','ngAnimate']);
+				'ngResource', 'ngSanitize','angular-loading-bar','ngAnimate','angular-iscroll']);
 
 //全局配置
 mainModule.run(['$rootScope','$state','$http','$stateParams','$location','$timeout','$window',

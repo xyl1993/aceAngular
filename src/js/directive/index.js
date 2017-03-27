@@ -133,7 +133,7 @@ mainModule.directive("equelframe",[function(){
 					$('.child-content').hide();
         	    	$('li[data-category='+type+']').addClass('active');
     	        	$('div[data-category='+type+']').show();
-        	    }else{ 
+        	    }else{
 					for(var i=0,len = topListAry.length;i<len;i++){
 						sumWidth = sumWidth+$(topListAry[i]).width();
 					}

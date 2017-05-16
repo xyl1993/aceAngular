@@ -2,6 +2,9 @@
 .navbar{
     background: #157fcb;
 }
+.nav-list>li .submenu>li{
+    cursor:pointer;
+}
 .nav-tabs>li {
     cursor: pointer;
 }
@@ -142,4 +145,10 @@ input[type=checkbox].ace.ace-switch.refuse-flag.ace-switch-7+.lbl::before{
 .modal-body{
     overflow-y:auto;
     max-height: 466px;
+}
+#loading-bar-container{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1031;
 }

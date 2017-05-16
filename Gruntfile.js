@@ -29,7 +29,7 @@ module.exports = function(grunt) {
             },
             vendor:{
                 src: [
-                    'assets/css/bootstrap.min.css',
+                    'bower_components/bootstrap/js/bootstrap.js',
                     'assets/css/font-awesome.min.css',
                     'assets/css/colorbox.css',
                     'assets/css/datepicker.css',

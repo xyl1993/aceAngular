@@ -33,108 +33,113 @@
     <script src="assets/js/respond.min.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="bower_components/jstree/jstree.min.css"/>
-    <link rel='stylesheet' href='bower_components/loading-bar/loading-bar.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='bower_components/loading-bar/loading-bar.min.css' type='text/css' media='all'/>
     <link rel="stylesheet" type="text/css" href="src/css/style.css">
 </head>
+
 <body class="navbar-fixed breadcrumbs-fixed">
 <div id="loading-bar-container"></div>
-<div ng-controller="indexCtrl">
-    <div class="navbar navbar-default navbar-fixed-top" id="navbar">
-        <div class="navbar-container" id="navbar-container">
-            <div class="navbar-header pull-left">
-                <a href="#" class="navbar-brand">
-                    <small>
-                        <i class="icon-leaf"></i>
-                        后台管理系统
-                    </small>
-                </a>
-                <!-- /.brand -->
-            </div>
-            <!-- /.navbar-header -->
-            <div class="navbar-header pull-right" role="navigation">
-                <ul class="nav ace-nav">
-                    <li class="light-blue">
-                        <a data-toggle="dropdown" class="dropdown-toggle">
-                            <img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo"/>
+<div>
+    <div ng-controller="indexCtrl">
+        <div class="navbar navbar-default navbar-fixed-top" id="navbar">
+            <div class="navbar-container" id="navbar-container">
+                <div class="navbar-header pull-left">
+                    <a href="#" class="navbar-brand">
+                        <small>
+                            <i class="icon-leaf"></i>
+                            后台管理系统
+                        </small>
+                    </a>
+                    <!-- /.brand -->
+                </div>
+                <!-- /.navbar-header -->
+                <div class="navbar-header pull-right" role="navigation">
+                    <ul class="nav ace-nav">
+                        <li class="light-blue">
+                            <a data-toggle="dropdown" class="dropdown-toggle">
+                                <img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo"/>
                                 <span class="user-info">
 									<small>欢迎光临,</small>
 									Jason
 								</span>
-                            <i class="icon-caret-down"></i>
-                        </a>
-                        <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-                            <li>
-                                <a>
-                                    <i class="icon-user"></i> 个人资料
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li ng-click="loginOut()">
-                                <a>
-                                    <i class="icon-off"></i> 退出
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- /.ace-nav -->
+                                <i class="icon-caret-down"></i>
+                            </a>
+                            <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                                <li>
+                                    <a>
+                                        <i class="icon-user"></i> 个人资料
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li ng-click="loginOut()">
+                                    <a>
+                                        <i class="icon-off"></i> 退出
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- /.ace-nav -->
+                </div>
+                <!-- /.navbar-header -->
             </div>
-            <!-- /.navbar-header -->
+            <!-- /.container -->
         </div>
-        <!-- /.container -->
-    </div>
-    <div class="main-container fixed" id="main-container">
-        <div class="main-container-inner">
-            <a class="menu-toggler" id="menu-toggler" href="#">
-                <span class="menu-text"></span>
-            </a>
-            <div class="sidebar sidebar-fixed" id="sidebar">
-                <div class="sidebar-shortcuts" id="sidebar-shortcuts">
-                    <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-                        <span>菜单</span>
+        <div class="main-container fixed" id="main-container">
+            <div class="main-container-inner">
+                <a class="menu-toggler" id="menu-toggler" href="#">
+                    <span class="menu-text"></span>
+                </a>
+                <div class="sidebar sidebar-fixed" id="sidebar">
+                    <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                        <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                            <span>菜单</span>
+                        </div>
+                    </div>
+                    <ul class="nav nav-list">
+                        <li ng-repeat="menuData in menuDatas" class="$index==0?'active open':''">
+                            <a class="dropdown-toggle">
+                                <i class="icon-list"></i>
+                                <span class="menu-text" ng-bind="menuData.menu_name">  </span>
+
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+
+                            <ul class="submenu">
+                                <li data-type="{{list.data_type}}" data-name="{{list.menu_name}}"
+                                    ng-repeat="list in menuData.children" data-url="{{list.menu_url}}"
+                                    class="left-tab-menu" left-menu>
+                                    <a>
+                                        <i class="icon-double-angle-right"></i>
+                                        <span ng-bind="list.menu_name"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- /.nav-list -->
+                    <div class="sidebar-collapse" id="sidebar-collapse">
+                        <i class="icon-double-angle-left" data-icon1="icon-double-angle-left"
+                           data-icon2="icon-double-angle-right"></i>
                     </div>
                 </div>
-                <ul class="nav nav-list">
-                    <li ng-repeat="menuData in menuDatas" class="$index==0?'active open':''">
-                        <a class="dropdown-toggle">
-                            <i class="icon-list"></i>
-                            <span class="menu-text" ng-bind="menuData.menu_name">  </span>
+                <div class="main-content" ui-view>
 
-                            <b class="arrow icon-angle-down"></b>
-                        </a>
-
-                        <ul class="submenu">
-                            <li data-type="{{list.data_type}}" data-name="{{list.menu_name}}"
-                                ng-repeat="list in menuData.children" data-url="{{list.menu_url}}" class="left-tab-menu" left-menu>
-                                <a>
-                                    <i class="icon-double-angle-right"></i>
-                                    <span ng-bind="list.menu_name"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- /.nav-list -->
-                <div class="sidebar-collapse" id="sidebar-collapse">
-                    <i class="icon-double-angle-left" data-icon1="icon-double-angle-left"
-                       data-icon2="icon-double-angle-right"></i>
                 </div>
+                <!-- /.main-content -->
             </div>
-            <div class="main-content" ui-view>
-
-            </div>
-            <!-- /.main-content -->
+            <!-- /.main-container-inner -->
+            <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+                <i class="icon-double-angle-up icon-only bigger-110"></i>
+            </a>
         </div>
-        <!-- /.main-container-inner -->
-        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-            <i class="icon-double-angle-up icon-only bigger-110"></i>
-        </a>
+        <!-- /.main-container -->
     </div>
-    <!-- /.main-container -->
 </div>
+
 </body>
 <script src="assets/js/jquery-2.0.3.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="bower_components/bootstrap/js/bootstrap.js"></script>
 <script src="assets/js/typeahead-bs2.min.js"></script>
 <!-- page specific plugin scripts -->
 <!--[if lte IE 8]>

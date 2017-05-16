@@ -105,8 +105,12 @@ mainModule.controller('bankCardAuditCtrl', ['$scope', '$rootScope',
             $('#bankCardDialog').modal({
                 keyboard: false
             }).on('shown.bs.modal', function (e) {
-                $('.ace-thumbnails [data-rel="colorbox"]').colorbox(colorbox_params);
-                $("#cboxLoadingGraphic").append("<i class='icon-spinner orange'></i>");
+                if($('.icon-spinner.orange').length==0){
+                    $('.ace-thumbnails [data-rel="colorbox"]').colorbox(colorbox_params);
+                    $("#cboxLoadingGraphic").append("<i class='icon-spinner orange'></i>");
+                }
+            }).on('hide.bs.modal',function (e) {
+                $("#cboxLoadingGraphic").empty();
             })
         };
         $scope.startAll = function () {
